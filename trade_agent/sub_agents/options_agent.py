@@ -3,11 +3,7 @@
 from google.adk.agents import LlmAgent
 
 from trade_agent import prompt
-from trade_agent.tools import (
-    get_options_trades,
-    get_options_suggestions,
-    get_stock_quote,
-)
+from trade_agent.tools import get_mcp_tools
 
 MODEL = "gemini-2.0-flash"
 
@@ -21,5 +17,5 @@ options_agent = LlmAgent(
     ),
     instruction=prompt.OPTIONS_AGENT_PROMPT,
     output_key="options_analysis_output",
-    tools=[get_options_trades, get_options_suggestions, get_stock_quote],
+    tools=[get_mcp_tools()],
 )

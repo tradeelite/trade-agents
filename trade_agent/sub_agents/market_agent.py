@@ -4,13 +4,7 @@ from google.adk.agents import LlmAgent
 from google.adk.tools.google_search_tool import GoogleSearchTool
 
 from trade_agent import prompt
-from trade_agent.tools import (
-    get_stock_quote,
-    get_stock_news,
-    get_stock_sentiment,
-    get_technical_indicators,
-    get_company_info,
-)
+from trade_agent.tools import get_mcp_tools
 
 MODEL = "gemini-2.0-flash"
 
@@ -24,12 +18,5 @@ market_agent = LlmAgent(
     ),
     instruction=prompt.MARKET_AGENT_PROMPT,
     output_key="market_research_output",
-    tools=[
-        get_stock_quote,
-        get_stock_news,
-        get_stock_sentiment,
-        get_technical_indicators,
-        get_company_info,
-        GoogleSearchTool(),
-    ],
+    tools=[get_mcp_tools(), GoogleSearchTool()],
 )

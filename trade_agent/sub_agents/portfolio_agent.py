@@ -3,7 +3,7 @@
 from google.adk.agents import LlmAgent
 
 from trade_agent import prompt
-from trade_agent.tools import get_portfolios, get_portfolio_holdings, get_stock_quote
+from trade_agent.tools import get_mcp_tools
 
 MODEL = "gemini-2.0-flash"
 
@@ -16,5 +16,5 @@ portfolio_agent = LlmAgent(
     ),
     instruction=prompt.PORTFOLIO_AGENT_PROMPT,
     output_key="portfolio_analysis_output",
-    tools=[get_portfolios, get_portfolio_holdings, get_stock_quote],
+    tools=[get_mcp_tools()],
 )
