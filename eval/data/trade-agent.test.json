@@ -1,0 +1,30 @@
+[
+  {
+    "query": "Give me a quick analysis of AAPL",
+    "expected_tool_use": [
+      {"tool_name": "market_agent"}
+    ],
+    "reference": "The response should mention Apple or AAPL and include price, sentiment, or technical signal information."
+  },
+  {
+    "query": "How is my portfolio doing?",
+    "expected_tool_use": [
+      {"tool_name": "portfolio_agent"}
+    ],
+    "reference": "The response should mention portfolio holdings, value, or performance metrics."
+  },
+  {
+    "query": "Do I have any urgent options I need to manage?",
+    "expected_tool_use": [
+      {"tool_name": "options_agent"}
+    ],
+    "reference": "The response should mention options positions, DTE, expiry, or trading suggestions."
+  },
+  {
+    "query": "What is the StockTwits sentiment on NVDA?",
+    "expected_tool_use": [
+      {"tool_name": "market_agent"}
+    ],
+    "reference": "The response should mention NVDA or NVIDIA and bullish or bearish sentiment."
+  }
+]
